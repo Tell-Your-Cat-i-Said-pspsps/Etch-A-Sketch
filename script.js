@@ -8,6 +8,7 @@ const rainbowMode =document.querySelector("#rainbow");
 const clearBtn =document.querySelector("#clear");
 let penMode = penColor.value;
 
+
 let size =16;
 clearBtn.addEventListener("click",()=>{
     let elements = container.querySelectorAll('.pixel')
@@ -18,7 +19,7 @@ clearBtn.addEventListener("click",()=>{
     }
 
 })
-
+let randomValue = 0;
 penColor.addEventListener("change",()=>{
     penMode=penColor.value;
 })
@@ -55,7 +56,13 @@ canvasSize.addEventListener("mouseup",()=>{
             newPixel.style.height=`${pixelSize}px`;
             newPixel.style.width=`${pixelSize}px`;
             newPixel.addEventListener("mouseover",()=>{
+                if(rainbowMode.checked)
+                {
+                    penMode= colorPalet[randomValue];
+                }
                 newPixel.style.backgroundColor=`${penMode}`;
+                randomValue=Math.round(Math.random() * 10);
+                
             })
             newRow.appendChild(newPixel);
         }
@@ -81,14 +88,18 @@ function startCanvas(size)
             let newPixel = document.createElement("div");
             newPixel.classList.add("pixel");
             newPixel.addEventListener("mouseover",()=>{
+                if(rainbowMode.checked)
+                {
+                    penMode= colorPalet[randomValue];
+                }
                 newPixel.style.backgroundColor=`${penMode}`;
+                randomValue=Math.round(Math.random() * 10);
             })
             newRow.appendChild(newPixel);
         }
     }
 }
-
-
+let colorPalet = ["#8875D1","#CD7E6A","#B4443C","#1C3A54","#D1F0EF","#6ECF99","#FFF766","#9EEFFF","#FF426E","#91FF47","#CC24FF"];
 
 
 
