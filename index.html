@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: Etch-a-Sketch</title>
+</head>
+<body>
+    <div class="control">
+        <div class="radioConainer">
+            <ul class="radioList">
+                <li class="colorPicker">
+                    <input type="color" name="penColor" id="penColor">
+                    <input type="radio" name="color" id="color" value="color" checked="checked">
+                    <label for="color" style="width: 100px;">color</label>
+                </li>
+                <li>
+                    <input type="radio" name="color" id="rainbow" value="rainbow">
+                    <label for="rainbow">rainbow</label>
+                </li>
+                <li>
+                    <input type="radio" name="color" id="eraser" value="eraser">
+                    <label for="eraser">Eraser</label>
+                </li>
+            </ul>
+        </div>
+        <label for="CanvasSize" id="CanvasSizeLabel"></label>
+        <input type="range" name="Canvas size" id="CanvasSize" min="16" max="64" value="1">
+    </div>
+    <div class="container"></div>
+</body>
+</html>
