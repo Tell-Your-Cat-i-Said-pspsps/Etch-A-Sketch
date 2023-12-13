@@ -15,22 +15,27 @@
         <div class="radioConainer">
             <ul class="radioList">
                 <li class="colorPicker">
-                    <input type="color" name="penColor" id="penColor">
+                    <input type="color" name="penColor" id="penColor" value="#000">
                     <input type="radio" name="color" id="color" value="color" checked="checked">
-                    <label for="color" style="width: 100px;">color</label>
+                    <label for="color" style="width: 100px;" class="choice">color</label>
                 </li>
                 <li>
                     <input type="radio" name="color" id="rainbow" value="rainbow">
-                    <label for="rainbow">rainbow</label>
+                    <label for="rainbow" class="choice">rainbow</label>
                 </li>
                 <li>
                     <input type="radio" name="color" id="eraser" value="eraser">
-                    <label for="eraser">Eraser</label>
+                    <label for="eraser" class="choice">Eraser</label>
+                </li>
+                <li>
+                    <button id="clear">Clear</button>
                 </li>
             </ul>
+            
         </div>
+        
         <label for="CanvasSize" id="CanvasSizeLabel"></label>
-        <input type="range" name="Canvas size" id="CanvasSize" min="16" max="64" value="1">
+        <input type="range" name="Canvas size" id="CanvasSize" min="16" max="64" value="1" autocomplete="off">
     </div>
     <div class="container"></div>
 </body>

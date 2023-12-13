@@ -5,9 +5,24 @@ const canvasSizeLabel = document.querySelector("#CanvasSizeLabel");
 const colorMode = document.querySelector("#color");
 const eraserMode = document.querySelector("#eraser");
 const rainbowMode =document.querySelector("#rainbow");
+const clearBtn =document.querySelector("#clear");
 let penMode = penColor.value;
 
 let size =16;
+clearBtn.addEventListener("click",()=>{
+    let elements = container.querySelectorAll('.pixel')
+    let nodeListLength =elements.length;
+    for(let i = 0; i <nodeListLength;i++)
+    {
+        elements[i].style.backgroundColor = "#d1d0c5";
+    }
+
+})
+
+penColor.addEventListener("change",()=>{
+    penMode=penColor.value;
+})
+
 eraserMode.addEventListener("change",()=>{
     if(eraserMode.checked)
     {
@@ -17,11 +32,12 @@ eraserMode.addEventListener("change",()=>{
 colorMode.addEventListener("change",()=>{
     if(colorMode.checked)
     {
-        penMode = penColor.value;
+        penMode=penColor.value;
     }
 })
 canvasSizeLabel.textContent = `Canvas Size :${size}x${size}`
 startCanvas(size);
+
 canvasSize.addEventListener("mouseup",()=>{
     let PixelCount = parseInt(canvasSize.value);
     canvasSizeLabel.textContent = `Canvas Size :${PixelCount}x${PixelCount}`
